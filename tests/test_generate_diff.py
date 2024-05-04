@@ -5,9 +5,9 @@ def test_generate_diff():
     file_path1 = 'fixtures/file1.json'
     file_path2 = 'fixtures/file2.json'
     file_path3 = 'fixtures/file3.json'
-    result_file1 = open('fixtures/result1')
-    result_file2 = open('fixtures/result2')
-    result_file3 = open('fixtures/result3')
+    result_file1 = open('fixtures/result1.txt')
+    result_file2 = open('fixtures/result2.txt')
+    result_file3 = open('fixtures/result3.txt')
     result1 = result_file1.read()
     result2 = result_file2.read()
     result3 = result_file3.read()
