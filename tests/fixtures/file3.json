@@ -1,0 +1,5 @@
+{
+  "time": 20,
+  "some_bool": true,
+  "some_host": "hexlet.io"
+}
