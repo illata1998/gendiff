@@ -10,6 +10,5 @@ def test_generate_diff():
     result2 = result_file2.read()
     result_file1.close()
     result_file2.close()
-    result_file3.close()
     assert result1 == generate_diff(file_path1, file_path2)
     assert result2 == generate_diff(file_path1, file_path1)
