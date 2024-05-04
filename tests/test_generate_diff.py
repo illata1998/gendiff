@@ -2,10 +2,10 @@ from gendiff.modules.gendiff_func import generate_diff
 
 
 def test_generate_diff():
-    file_path1 = 'fixtures/file1.json'
-    file_path2 = 'fixtures/file2.json'
-    result_file1 = open('fixtures/result1.txt')
-    result_file2 = open('fixtures/result2.txt')
+    file_path1 = 'tests/fixtures/file1.json'
+    file_path2 = 'tests/fixtures/file2.json'
+    result_file1 = open('tests/fixtures/result1.txt')
+    result_file2 = open('tests/fixtures/result2.txt')
     result1 = result_file1.read()
     result2 = result_file2.read()
     result_file1.close()
