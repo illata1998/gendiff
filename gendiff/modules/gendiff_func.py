@@ -30,7 +30,7 @@ def generate_diff(file_path1, file_path2):
     if file_path2.endswith('.json'):
         data2 = parse_json(file_path2)
     elif file_path2.endswith('.yaml') or file_path2.endswith('.yml'):
-        data1 = parse_yaml(file_path2)
+        data2 = parse_yaml(file_path2)
     result = {}
     for key in data1:
         if key in data2:
