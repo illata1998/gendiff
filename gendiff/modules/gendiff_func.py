@@ -1,5 +1,5 @@
-import json
 import itertools
+from gendiff.modules.parse_func import parse_json, parse_yaml
 
 
 def stringify(value, replacer=' ', spaces_count=1):
@@ -23,9 +23,8 @@ def stringify(value, replacer=' ', spaces_count=1):
 
 
 def generate_diff(file_path1, file_path2):
-    with open(file_path1) as file1, open(file_path2) as file2:
-        data1 = json.load(file1)
-        data2 = json.load(file2)
+    if file_path1.endswith('.json'):
+        data1, data2 = parse_json(file_path1), parse_json(file_path2)
     result = {}
     for key in data1:
         if key in data2:
