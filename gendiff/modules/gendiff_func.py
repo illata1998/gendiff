@@ -1,4 +1,4 @@
-from gendiff.modules.stringify import stringify
+from gendiff.modules.stringify_func import stringify
 from gendiff.modules.parse_func import parse
 
 
