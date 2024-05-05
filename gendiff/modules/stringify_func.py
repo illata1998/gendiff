@@ -4,7 +4,7 @@ from itertools import chain
 def stringify(value, replacer=' ', spaces_count=1):
 
     def iter_(current_value, depth):
-        if not isinstance(current_value, dict)
+        if not isinstance(current_value, dict):
             if isinstance(current_value, bool):
                 return str(current_value).lower()
             return str(current_value)
