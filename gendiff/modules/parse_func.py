@@ -19,7 +19,7 @@ def is_json(file_path):
 
 
 def is_yaml(file_path):
-    file_path.endswith('.yaml') or file_path.endswith('.yml')
+    return file_path.endswith('.yaml') or file_path.endswith('.yml')
 
 
 def parse(file_path):
