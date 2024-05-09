@@ -33,7 +33,8 @@ def stringify(data, replacer=' ', spaces_count=1):
         specials = ['  ', '+ ', '- ']
         for key, value in current_value.items():
             special_symbol = '' if key[:2] in specials else special_default
-            begin_indent = replacer * ((depth + 1) * spaces_count - 2) + special_symbol
+            begin_indent = replacer * ((depth + 1) * spaces_count - 2) + \
+                           special_symbol
             lines.append(f'{begin_indent}{key}: {iter_(value, depth + 1)}')
         result = chain("{", lines, [end_indent + "}"])
         return '\n'.join(result)
