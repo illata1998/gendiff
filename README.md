@@ -23,7 +23,7 @@ gendiff -f json file1.yaml file2.json
 ```
 ### Example 1: Display help message
 <a href="https://asciinema.org/a/d9gkDX2qskXiJpvFXSbVwkrpd" target="_blank"><img src="https://asciinema.org/a/d9gkDX2qskXiJpvFXSbVwkrpd.svg" /></a>
-### Example 2: Compare two flat JSONs or YAMLs
+### Example 2: Compare two flat JSONs
 <a href="https://asciinema.org/a/W11egoRzgNMiuJ84C3kipuQ74" target="_blank"><img src="https://asciinema.org/a/W11egoRzgNMiuJ84C3kipuQ74.svg" /></a>
 ### Example 3: Compare two flat YAMLs
 <a href="https://asciinema.org/a/05qLbfR8ded6cXbEaQ8NMJMkp" target="_blank"><img src="https://asciinema.org/a/05qLbfR8ded6cXbEaQ8NMJMkp.svg" /></a>
