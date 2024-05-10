@@ -1,4 +1,4 @@
-from gendiff.modules.gendiff_func import generate_diff
+from gendiff.modules.generate_diff import generate_diff
 
 
 def test_generate_diff_flat():
@@ -10,10 +10,13 @@ def test_generate_diff_flat():
         result_stylish = result_stylish_file.read()[:-1]
     with open('tests/fixtures/result_flat_plain.txt') as result_plain_file:
         result_plain = result_plain_file.read()[:-1]
+    with open('tests/fixtures/result_flat_json.txt') as result_json_file:
+        result_json = result_json_file.read()[:-1]
     assert result_stylish == generate_diff(json_path1, json_path2)
     assert result_stylish == generate_diff(yaml_path1, yaml_path2)
     assert result_stylish == generate_diff(json_path1, yaml_path2)
     assert result_plain == generate_diff(json_path1, json_path2, 'plain')
+    assert result_json == generate_diff(json_path1, json_path2, 'json')
 
 
 def test_generate_diff_nested():
@@ -25,7 +28,10 @@ def test_generate_diff_nested():
         result_stylish = result_stylish_file.read()[:-1]
     with open('tests/fixtures/result_nested_plain.txt') as result_plain_file:
         result_plain = result_plain_file.read()[:-1]
+    with open('tests/fixtures/result_nested_json.txt') as result_json_file:
+        result_json = result_json_file.read()[:-1]
     assert result_stylish == generate_diff(json_path1, json_path2)
     assert result_stylish == generate_diff(yaml_path1, yaml_path2)
     assert result_stylish == generate_diff(json_path1, yaml_path2)
     assert result_plain == generate_diff(json_path1, json_path2, 'plain')
+    assert result_json == generate_diff(json_path1, json_path2, 'json')
