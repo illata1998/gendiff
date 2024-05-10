@@ -1,4 +1,4 @@
-def diff(data1, data2):
+def get_diff(data1, data2):
     result = []
     keys = set(data1.keys()) | set(data2.keys())
     for key in keys:
@@ -18,7 +18,7 @@ def diff(data1, data2):
             result.append({
                 'key': key,
                 'flag': 'nested',
-                'children': diff(data1[key], data2[key])
+                'children': get_diff(data1[key], data2[key])
             })
         elif data1[key] == data2[key]:
             result.append({
