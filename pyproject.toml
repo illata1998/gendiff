@@ -1,9 +1,15 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "Compares two configuration files and shows a difference."
 authors = ["Ulyana Krasilnikova <b-lack-u@yandex.ru>"]
 readme = "README.md"
+repository = "https://github.com/illata1998/python-project-50.git"
+classifiers = [
+    "Topic :: File Formats :: JSON",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.10"
+]
 packages = [
   { include = "gendiff" },
 ]
