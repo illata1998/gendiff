@@ -1,7 +1,7 @@
 from itertools import chain
 
 
-def build_diff_dict(diff_list):
+def convert_diff_to_dict(diff_list):
     result = {}
     for item in diff_list:
         match item['flag']:
@@ -15,12 +15,13 @@ def build_diff_dict(diff_list):
             case 'same':
                 result['  ' + item['key']] = item['value']
             case 'nested':
-                result['  ' + item['key']] = build_diff_dict(item['children'])
+                result['  ' + item['key']] = convert_diff_to_dict(
+                    item['children'])
     return result
 
 
 def stringify(data, replacer=' ', spaces_count=1):
-    def iter_(current_value, depth, special_default=replacer * 2):
+    def iter_(current_value, depth, default_special_symbol=replacer * 2):
         if not isinstance(current_value, dict):
             if isinstance(current_value, bool):
                 return str(current_value).lower()
@@ -30,9 +31,10 @@ def stringify(data, replacer=' ', spaces_count=1):
 
         end_indent = replacer * (depth * spaces_count)
         lines = []
-        specials = ['  ', '+ ', '- ']
+        special_symbols = ['  ', '+ ', '- ']
         for key, value in current_value.items():
-            special_symbol = '' if key[:2] in specials else special_default
+            special_symbol = '' if key[:2] in special_symbols else (
+                default_special_symbol)
             begin_indent = replacer * ((depth + 1) * spaces_count - 2) + \
                 special_symbol
             lines.append(f'{begin_indent}{key}: {iter_(value, depth + 1)}')
@@ -42,5 +44,6 @@ def stringify(data, replacer=' ', spaces_count=1):
     return iter_(data, 0)
 
 
-def stylish(diff_list):
-    return stringify(build_diff_dict(diff_list), replacer=' ', spaces_count=4)
+def render_stylish(diff_list):
+    return stringify(convert_diff_to_dict(diff_list),
+                     replacer=' ', spaces_count=4)
