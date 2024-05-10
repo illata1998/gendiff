@@ -6,12 +6,14 @@ def test_generate_diff_flat():
     json_path2 = 'tests/fixtures/flat2.json'
     yaml_path1 = 'tests/fixtures/flat1.yaml'
     yaml_path2 = 'tests/fixtures/flat2.yml'
-    result_file1 = open('tests/fixtures/result_flat.txt')
-    result1 = result_file1.read()[:-1]
-    result_file1.close()
-    assert result1 == generate_diff(json_path1, json_path2)
-    assert result1 == generate_diff(yaml_path1, yaml_path2)
-    assert result1 == generate_diff(json_path1, yaml_path2)
+    with open('tests/fixtures/result_flat_stylish.txt') as result_stylish_file:
+        result_stylish = result_stylish_file.read()[:-1]
+    with open('tests/fixtures/result_flat_plain.txt') as result_plain_file:
+        result_plain = result_plain_file.read()[:-1]
+    assert result_stylish == generate_diff(json_path1, json_path2)
+    assert result_stylish == generate_diff(yaml_path1, yaml_path2)
+    assert result_stylish == generate_diff(json_path1, yaml_path2)
+    assert result_plain == generate_diff(json_path1, json_path2, 'plain')
 
 
 def test_generate_diff_nested():
@@ -19,9 +21,11 @@ def test_generate_diff_nested():
     json_path2 = 'tests/fixtures/nested2.json'
     yaml_path1 = 'tests/fixtures/nested1.yaml'
     yaml_path2 = 'tests/fixtures/nested2.yml'
-    result_file1 = open('tests/fixtures/result_nested.txt')
-    result1 = result_file1.read()[:-1]
-    result_file1.close()
-    assert result1 == generate_diff(json_path1, json_path2)
-    assert result1 == generate_diff(yaml_path1, yaml_path2)
-    assert result1 == generate_diff(json_path1, yaml_path2)
+    with open('tests/fixtures/result_nested_stylish.txt') as result_stylish_file:
+        result_stylish = result_stylish_file.read()[:-1]
+    with open('tests/fixtures/result_nested_plain.txt') as result_plain_file:
+        result_plain = result_plain_file.read()[:-1]
+    assert result_stylish == generate_diff(json_path1, json_path2)
+    assert result_stylish == generate_diff(yaml_path1, yaml_path2)
+    assert result_stylish == generate_diff(json_path1, yaml_path2)
+    assert result_plain == generate_diff(json_path1, json_path2, 'plain')
