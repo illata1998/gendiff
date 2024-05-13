@@ -21,5 +21,3 @@ test-coverage:
 
 selfcheck:
 	poetry check
-
-check: selfcheck lint
