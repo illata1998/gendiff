@@ -1,5 +1,5 @@
 import pytest
-from gendiff.modules.generate_diff import generate_diff
+from gendiff.generate_diff import generate_diff
 
 
 def read_results(result_path):
