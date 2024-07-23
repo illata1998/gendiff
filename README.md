@@ -6,7 +6,7 @@ Console application that compares two configuration files (JSON or YAML) and sho
 ## Installation
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install gendiff.
 ```bash
-pip install --user git+https://github.com/illata1998/python-project-50.git
+pip install --user git+https://github.com/illata1998/gendiff.git
 ```
 ## Usage
 ```bash
